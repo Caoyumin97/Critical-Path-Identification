@@ -43,17 +43,17 @@ def create_grid_network(size, show_plot=False):
     for node in node_list:
         row, col = node
         if row > 0:
-            G.add_edge(node,(row - 1,col))
-            G.add_edge((row - 1,col),node)
+            G.add_edge(node,(row - 1,col),distance= 300 + 700 * np.random.rand())
+            G.add_edge((row - 1,col),node,distance= 300 + 700 * np.random.rand())
         if col > 0:
-            G.add_edge(node,(row,col - 1))
-            G.add_edge((row,col - 1),node)
+            G.add_edge(node,(row,col - 1),distance= 300 + 700 * np.random.rand())
+            G.add_edge((row,col - 1),node,distance= 300 + 700 * np.random.rand())
         if row < max_idx:
-            G.add_edge(node,(row + 1,col))
-            G.add_edge((row + 1,col),node)
+            G.add_edge(node,(row + 1,col),distance= 300 + 700 * np.random.rand())
+            G.add_edge((row + 1,col),node,distance= 300 + 700 * np.random.rand())
         if col < max_idx:
-            G.add_edge(node,(row,col + 1))
-            G.add_edge((row,col + 1),node)
+            G.add_edge(node,(row,col + 1),distance= 300 + 700 * np.random.rand())
+            G.add_edge((row,col + 1),node,distance= 300 + 700 * np.random.rand())
 
     # network vis
     if show_plot:
